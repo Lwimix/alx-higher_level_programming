@@ -8,9 +8,13 @@ def args(argv):
         print("0 arguments.")
     else:
         no = 1
-        arg = "argument:"
-        args = "arguments:"
-        print(str(len(argv) - 1), args if len(argv) > 1 else arg)
+        ar = "argument:"
+        ar = "arguments:"
+        if len(argv) > 2:
+            ar = "arguments:"
+        else:
+            ar = "argument:"
+        print(str(len(argv) - 1), ar)
         while no < len(argv):
             print(str(no) + ":", argv[no])
             no = no + 1
