@@ -12,7 +12,7 @@ def args(argv):
         args = "arguments:"
         print(str(len(argv) - 1), args if len(argv) > 1 else arg)
         while no < len(argv):
-            print(str(no), ":", argv[no])
+            print(str(no) + ":", argv[no])
             no = no + 1
 
 
