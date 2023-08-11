@@ -5,7 +5,7 @@ import sys
 def args(argv):
     """argument info"""
     if len(argv) == 1:
-        print("0 arguments")
+        print("0 arguments.")
     else:
         no = 1
         arg = "argument"
