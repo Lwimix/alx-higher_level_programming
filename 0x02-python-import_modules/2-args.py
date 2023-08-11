@@ -5,11 +5,11 @@ import sys
 def args(argv):
     """argument info"""
     if len(argv) == 1:
-        print("0 arguments.\n")
+        print("0 arguments.")
     else:
         no = 1
-        arg = "argument:\n"
-        args = "arguments:\n"
+        arg = "argument:"
+        args = "arguments:"
         print(str(len(argv) - 1), args if len(argv) > 1 else arg)
         while no < len(argv):
             print(str(no) + ":", argv[no])
