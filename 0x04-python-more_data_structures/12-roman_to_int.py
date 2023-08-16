@@ -19,9 +19,8 @@ def common(roma):
 
 
 def roman_to_int(roman_string):
-    len_str = len(roman_string)
     roma = roman_string
-    if not roman_string or not len_str:
+    if not roman_string or not type(roma) == str:
         return None
     add = 0
     for i, rom in enumerate(roma):
