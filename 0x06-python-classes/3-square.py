@@ -12,19 +12,14 @@ class Square:
         __init__(self, size=0): intializes class attributes
     """
     def __init__(self, size=0):
-        if not isinstance(type(size), int):
-            raise TypeError('size must be an integer')
-        elif size < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            self.__size = size
+        self.__size = size
 
     def area(self):
         """Determines the area of our square
         Returns:
             the area of the square, an error otherwise
         """
-        if not isinstance(type(self.__size), int):
+        if not isinstance(self.__size, int):
             raise TypeError('size must be an integer')
         elif self.__size < 0:
             raise ValueError('size must be >= 0')
