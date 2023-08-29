@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""The Beginning of a square's creation
+"""
+
+
 class Square:
-    """
-    Creates a square
+    """A Square shape
+
+    Creates a square shape with various properties
 
     Methods:
         __init__(self, size=0): intializes class attributes
@@ -10,6 +15,10 @@ class Square:
         self.__size = size
 
     def area(self):
+        """Determines the area of our square
+        Returns:
+            the area of the square, an error otherwise
+        """
         if not isinstance(type(self.__size), int):
             raise TypeError('size must be an integer')
         elif self.__size < 0:
@@ -19,6 +28,7 @@ class Square:
 
     @property
     def size(self):
+        """The size given as our square size"""
         return self.__size
 
     @size.setter
@@ -31,6 +41,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
+        """Prints out our square using hashtags"""
         if self.__size == 0:
             print("")
         else:
