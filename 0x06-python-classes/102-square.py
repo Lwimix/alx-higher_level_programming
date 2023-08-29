@@ -54,34 +54,34 @@ class Square:
         if isinstance(rival, Square):
             return self.__size <= rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
 
     def __lt__(self, rival):
         if isinstance(rival, Square):
             return self.__size < rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
 
     def __gt__(self, rival):
         if isinstance(rival, Square):
             return self.__size > rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
 
     def __ge__(self, rival):
         if isinstance(rival, Square):
             return self.__size >= rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
 
     def __eq__(self, rival):
         if isinstance(rival, Square):
             return self.__size == rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
 
     def __ne__(self, rival):
         if isinstance(rival, Square):
             return self.__size != rival.__size
         else:
-            raise TypeError("Cannot compare Square with non-Square object")
+            raise TypeError("Cannot compare non-Square obj")
