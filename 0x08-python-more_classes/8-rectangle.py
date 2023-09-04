@@ -77,8 +77,6 @@ class Rectangle:
             if item < self.__height - 1:
                 my_str += "\n"
         return my_str
-        if self.__width == 0 or self.__height == 0:
-            return ""
 
     def __repr__(self):
         """Returns a true string of our rectangle

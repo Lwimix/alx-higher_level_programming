@@ -62,16 +62,14 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """Prints our rectangle in the form of hashes
+        """Returns a string of our rectangle in the form of hashes
 
         """
         if self.__width == 0 or self.__height == 0:
-            print("")
-        else:
-            my_str = ""
-            for item in range(self.__height):
-                for i in range(self.__width):
-                    my_str += "#"
-                if item < self.__height - 1:
-                    my_str += "\n"
+            return ""
+        my_str = ""
+        for item in range(self.__height):
+            my_str += str(self.print_symbol) * self.__width
+            if item < self.__height - 1:
+                my_str += "\n"
         return my_str

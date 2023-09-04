@@ -69,14 +69,12 @@ class Rectangle:
 
         """
         if self.__width == 0 or self.__height == 0:
-            print("")
-        else:
-            my_str = ""
-            for item in range(self.__height):
-                for i in range(self.__width):
-                    my_str += "#"
-                if item < self.__height - 1:
-                    my_str += "\n"
+            return ""
+        my_str = ""
+        for item in range(self.__height):
+            my_str += str(self.print_symbol) * self.__width
+            if item < self.__height - 1:
+                my_str += "\n"
         return my_str
 
     def __repr__(self):
