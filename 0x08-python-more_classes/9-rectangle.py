@@ -17,7 +17,15 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        if not isinstance(width, int):
+            raise TypeError('width must be an integer')
+        if width < 0:
+            raise ValueError('width must be >= 0')
         self.__width = width
+        if not isinstance(height, int):
+            raise TypeError('height must be an integer')
+        if height < 0:
+            raise ValueError('height must be >= 0')
         self.__height = height
         self.__class__.number_of_instances += 1
 
@@ -110,4 +118,8 @@ class Rectangle:
         """Creates a new class which is a square
 
         """
+        if not isinstance(size, int):
+            raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
         return cls(size, size)
