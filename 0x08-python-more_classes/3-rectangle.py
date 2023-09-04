@@ -69,7 +69,7 @@ class Rectangle:
             return ""
         my_str = ""
         for item in range(self.__height):
-            my_str += str(self.print_symbol) * self.__width
+            my_str += "#" * self.__width
             if item < self.__height - 1:
                 my_str += "\n"
         return my_str
