@@ -1,0 +1,31 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(0)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("")
+
+>>> text_indentation("Hello")
+Hello
+
+>>> text_indentation("Hello world.")
+Hello world.
+<BLANKLINE>
+
+>>> text_indentation("Tes?t")
+Tes?
+<BLANKLINE>
+t
+
+>>> text_indentation(":")
+:
+<BLANKLINE>
+
+>>> text_indentation(James)
+Traceback (most recent call last):
+NameError: name 'James' is not defined

@@ -1,0 +1,40 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> good_matrix = [[1, 2, 3], [4, 5, 6]]
+>>> tuple_matrix = ([1, 2, 3], [4, 5, 6])
+>>> list_of_tuples_matrix = [(1, 2, 3), [4, 5, 6]]
+>>> bad_matrix_unequal_rows = [[1, 2], [4, 5, 6]]
+>>> bad_matrix_not_all_ints_or_floats = [[1, 2, "yikes"], [4, 'r', 6]]
+
+>>> matrix_divided(good_matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> matrix_divided(tuple_matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(good_matrix, -5)
+[[-0.2, -0.4, -0.6], [-0.8, -1.0, -1.2]]
+
+>>> matrix_divided(bad_matrix_unequal_rows, 10)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided(good_matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix_divided(bad_matrix_not_all_ints_or_floats, 11)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([], 6)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(good_matrix, "what")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided("Who", "what")
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
