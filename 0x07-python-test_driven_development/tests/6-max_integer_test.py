@@ -29,8 +29,8 @@ class TestMaxInteger(unittest.TestCase):
         """Tests out using negative numbers
 
         """
-        output = max_integer([-34, 26, 67, -120, 45])
-        self.assertEqual(output, 67)
+        output = max_integer([-34, -26, -67, -120, -45])
+        self.assertEqual(output, -26)
 
     def test_duplicate_numbers(self):
         """Tests out using duplicate numbers
@@ -45,6 +45,20 @@ class TestMaxInteger(unittest.TestCase):
         """
         output = max_integer([4])
         self.assertEqual(output, 4)
+
+    def test_max_in_beginning(self):
+        """Tests out using a single number
+
+        """
+        output = max_integer([200, 78, 90])
+        self.assertEqual(output, 200)
+
+    def test_one_negative_number(self):
+        """Tests out using a single number
+
+        """
+        output = max_integer([4, -900, 34, 65])
+        self.assertEqual(output, 65)
 
 
 if __name__ == '__main__':
