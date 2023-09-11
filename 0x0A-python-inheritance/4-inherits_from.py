@@ -4,10 +4,12 @@
 Contains inherits_from function
 
 """
+
+
 def inherits_from(obj, a_class):
     """The is_kind_of_class function
     Checks if obj instance or inherited
     """
-    if isinstance(obj, a_class) and type(obj) != a_class:
+    if isinstance(obj, a_class) and (type(obj) is not a_class):
         return True
     return False

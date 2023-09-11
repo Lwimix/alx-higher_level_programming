@@ -4,6 +4,8 @@
 Contains an empty geometry module
 
 """
+
+
 class BaseGeometry:
     """My BaseGeometry class
     It contains area method
@@ -18,7 +20,7 @@ class BaseGeometry:
         """Integer validator method
         Verifies value is a positive integer
         """
-        if not type(value) == int:
+        if type(value) is not int:
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")

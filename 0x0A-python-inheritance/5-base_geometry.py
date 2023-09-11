@@ -4,6 +4,8 @@
 Contains an empty geometry module
 
 """
+
+
 class BaseGeometry:
     """My BaseGeometry class
     It is empty

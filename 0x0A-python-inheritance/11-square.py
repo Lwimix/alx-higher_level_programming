@@ -4,6 +4,8 @@
 Contains an BaseGeometry class and Rectangle class
 
 """
+
+
 class BaseGeometry:
     """My BaseGeometry class
     It contains area method
@@ -22,19 +24,21 @@ class BaseGeometry:
         """Integer validator method
         Verifies value is a positive integer
         """
-        if not type(value) == int:
+        if type(value) is not int:
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
+
 
 class Rectangle(BaseGeometry):
     """My Rectangle class
     Inherits from BaseGeometry
 
-    Methods: 
+    Methods:
     __init__(self, width, height):
     """
     rect = "[Rectangle] "
+
     def __init__(self, width, height):
         super().integer_validator("", width)
         self.__width = width
@@ -58,6 +62,7 @@ class Rectangle(BaseGeometry):
         Prints class as a string
         """
         return self.rect + str(self.__width) + "/" + str(self.__height)
+
 
 class Square(Rectangle):
     """My Square class

@@ -4,6 +4,8 @@
 Contains lookup function
 
 """
+
+
 def lookup(obj):
     """My lookup function
     Checks the available attributes and methods of an obj
