@@ -1,0 +1,23 @@
+>>> import doctest
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([10])
+
+>>> my_list.print_sorted()
+[10]
+
+>>> my_unsorted_list = MyList([1, 6, 3, 2, 4])
+
+>>> my_unsorted_list.print_sorted()
+[1, 2, 3, 4, 6]
+
+>>> double = MyList([2, 4, 4, 2])
+
+>>> double.print_sorted()
+[2, 2, 4, 4]
+
+>>> neg = MyList([-1, -2, -8, -5])
+
+>>> neg.print_sorted()
+[-8, -5, -2, -1]
