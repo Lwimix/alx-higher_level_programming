@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" My class module
+"""
 MyClass = __import__('8-my_class_2').MyClass
 class_to_json = __import__('8-class_to_json').class_to_json
 

@@ -9,7 +9,7 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-def main():
+def my_func():
     """My main function
     Does most of the heavy lifting
     """
@@ -19,7 +19,8 @@ def main():
             continue
         buf.append(item)
     save_to_json_file(buf, "add_item.json")
+    loading = load_from_json_file("add_item.json")
 
 
 if __name__ == '__main__':
-    main()
+    my_func()
