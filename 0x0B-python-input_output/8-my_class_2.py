@@ -7,18 +7,18 @@ class MyClass:
     """ My class
     """
 
-    score = 0
+    s = 0
 
-    def __init__(self, name, number=4):
-        self.__name = name
-        self.number = number
-        self.is_team_red = (self.number % 2) == 0
+    def __init__(self, n, num=4):
+        self.__n = n
+        self.num = num
+        self.is_team_red = (self.num % 2) == 0
 
     def win(self):
-        self.score += 1
+        self.s += 1
 
     def lose(self):
-        self.score -= 1
+        self.s -= 1
 
     def __str__(self):
-        return "[MyClass] {} - {:d} => {:d}".format(self.__name, self.number, self.score)
+        return "[MyClass] {} - {:d} => {:d}".format(self.__n, self.num, self.s)
