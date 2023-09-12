@@ -21,4 +21,6 @@ def main():
     save_to_json_file(buf, "add_item.json")
     print(buf)
 
-main()
+
+if __name__ == '__main__':
+    main()

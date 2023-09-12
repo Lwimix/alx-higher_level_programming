@@ -6,6 +6,7 @@ Contains save_to_json_file function
 
 """
 
+
 def save_to_json_file(my_obj, filename):
     """save_to_json_file function
     Saves object to file using json representation
