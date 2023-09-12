@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import json
 """The class to json module
 
 Converts a class and its attributes to json
 
 """
+import json
 
 
 def class_to_json(obj):
