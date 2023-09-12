@@ -19,7 +19,6 @@ def main():
             continue
         buf.append(item)
     save_to_json_file(buf, "add_item.json")
-    print(buf)
 
 
 if __name__ == '__main__':

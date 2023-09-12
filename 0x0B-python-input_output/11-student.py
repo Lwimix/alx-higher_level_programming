@@ -43,3 +43,5 @@ class Student():
         """reload_from_json function
         Replaces all attributes of Student instance
         """
+        for key, value in json.items():
+            setattr(self, key, value)
