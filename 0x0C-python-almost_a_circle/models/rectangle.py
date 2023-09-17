@@ -42,7 +42,9 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Gets width"""
+        """width getter
+        Gets width
+        """
         return self.__width
 
     @width.setter
@@ -56,7 +58,9 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Gets height"""
+        """Height getter
+        Gets height
+        """
         return self.__height
 
     @height.setter
@@ -71,7 +75,9 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Gets x"""
+        """x getter
+        Gets x
+        """
         return self.__x
 
     @x.setter
@@ -85,7 +91,9 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Gets y"""
+        """y getter
+        Gets y
+        """
         return self.__y
 
     @y.setter
@@ -120,7 +128,8 @@ class Rectangle(Base):
         """String method
         String representation of class
         """
-        return "[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" + str(self.__y) + " - " + str(self.__width) + "/" + str(self.__height)
+        return (f"[Rectangle] ({self.id}) {self.__x}/"
+                f"{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
         """Update method
@@ -144,24 +153,24 @@ class Rectangle(Base):
             self.__height = kwargs.get('height', self.__height)
             self.__x = kwargs.get('x', self.__x)
             self.__y = kwargs.get('y', self.__y)
-    
+
     def to_dictionary(self):
-        """to_dictionary method
-        Returns dictionary representation of class
+        """To_dictionary method
+        Return dictionary representation of class
         """
         my_dict = vars(self)
         returned = dict()
         for key, value in my_dict.items():
-                if "width" in key:
-                    returned["width"] = value
-                elif "height" in key:
-                    returned["height"] = value
-                elif "id" in key:
-                    returned["id"] = value
-                elif "x" in key:
-                    returned["x"] = value
-                elif "y" in key:
-                    returned["y"] = value
-                elif "size" in key:
-                    returned["size"] = value
+            if "width" in key:
+                returned["width"] = value
+            elif "height" in key:
+                returned["height"] = value
+            elif "id" in key:
+                returned["id"] = value
+            elif "x" in key:
+                returned["x"] = value
+            elif "y" in key:
+                returned["y"] = value
+            elif "size" in key:
+                returned["size"] = value
         return returned

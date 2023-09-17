@@ -17,6 +17,7 @@ class Square(Rectangle):
     Methods:
     __init__(self, size, x=0, y=0, id=None):
     """
+
     def __init__(self, size, x=0, y=0, id=None):
         self.__size = size
         Rectangle.__init__(self, size, size, x, y, id)
@@ -25,7 +26,7 @@ class Square(Rectangle):
         """String Method
         String representation of Square
         """
-        return "[Square] (" + str(self.id) + ") " + str(self.x) + "/" + str(self.y) + " - " + str(self.__size)
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.__size}"
 
     @property
     def size(self):

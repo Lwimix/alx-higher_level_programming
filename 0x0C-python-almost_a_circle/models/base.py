@@ -17,7 +17,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if id == None:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
@@ -28,7 +28,7 @@ class Base():
         """to_json_string static method
         Converts object to JSON string
         """
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         my_json = json.dumps(list_dictionaries)
         return my_json
@@ -38,7 +38,7 @@ class Base():
         """save_to_file class method
         Saves json string to file
         """
-        if list_objs == None:
+        if list_objs is None:
             list_objs = []
         class_name = str(cls.__name__) + ".json"
         convert = []
@@ -53,7 +53,7 @@ class Base():
         """from_json_string static method
         Converts JSON string to object
         """
-        if json_string == None or len(json_string) == 0:
+        if json_string is None or len(json_string) == 0:
             return []
         my_obj = json.loads(json_string)
         return my_obj
