@@ -72,13 +72,9 @@ class Square(Rectangle):
         """
         my_dict = vars(self)
         returned = dict()
+        my_keys = ["id", "x", "y", "size"]
         for key, value in my_dict.items():
-            if "size" in key:
-                returned["size"] = value
-            elif "id" in key:
-                returned["id"] = value
-            elif "x" in key:
-                returned["x"] = value
-            elif "y" in key:
-                returned["y"] = value
+            for item in my_keys:
+                if item in key:
+                    returned[item] = my_dict[key]
         return returned
