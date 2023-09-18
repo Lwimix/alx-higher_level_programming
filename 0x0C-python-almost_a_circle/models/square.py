@@ -70,4 +70,15 @@ class Square(Rectangle):
         """to_dicionary method
         Returns dictionary representation of class
         """
-        return super().to_dictionary()
+        my_dict = vars(self)
+        returned = dict()
+        for key, value in my_dict.items():
+            if "size" in key:
+                returned["size"] = value
+            elif "id" in key:
+                returned["id"] = value
+            elif "x" in key:
+                returned["x"] = value
+            elif "y" in key:
+                returned["y"] = value
+        return returned

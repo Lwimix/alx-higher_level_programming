@@ -171,6 +171,4 @@ class Rectangle(Base):
                 returned["x"] = value
             elif "y" in key:
                 returned["y"] = value
-            elif "size" in key:
-                returned["size"] = value
         return returned
