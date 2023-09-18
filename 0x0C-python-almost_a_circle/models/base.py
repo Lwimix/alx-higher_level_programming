@@ -75,9 +75,10 @@ class Base():
         class_name = str(cls.__name__) + ".json"
         try:
             with open(class_name, 'r') as f:
-                info = json.loads(f.read())
+                info_string = f.read()
+                real_info = cls.from_json_string(info_string)
                 instances = []
-                for item in info:
+                for item in real_info:
                     instance = cls.create()
                     instances.append(instance)
                 return instances
