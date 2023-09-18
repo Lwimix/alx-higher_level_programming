@@ -55,9 +55,9 @@ class Square(Rectangle):
                 elif i == 1:
                     self.__size = item
                 elif i == 2:
-                    self.__x = item
+                    self.x = item
                 elif i == 3:
-                    self.__y = item
+                    self.y = item
         elif kwargs:
             self.id = kwargs.get('id', self.id)
             self.__size = kwargs.get('size', self.__size)
