@@ -43,6 +43,8 @@ class Square(Rectangle):
             raise ValueError('width must be >= 0')
         else:
             self.__size = value
+            self.width = value
+            self.height = value
 
     def update(self, *args, **kwargs):
         """Update method
@@ -55,9 +57,9 @@ class Square(Rectangle):
                 elif i == 1:
                     self.__size = item
                 elif i == 2:
-                    self.__x = item
+                    self.x = item
                 elif i == 3:
-                    self.__y = item
+                    self.y = item
         elif kwargs:
             self.id = kwargs.get('id', self.id)
             self.__size = kwargs.get('size', self.__size)
@@ -68,4 +70,11 @@ class Square(Rectangle):
         """to_dicionary method
         Returns dictionary representation of class
         """
-        return super().to_dictionary()
+        my_dict = vars(self)
+        returned = dict()
+        my_keys = ["id", "x", "y", "size"]
+        for key, value in my_dict.items():
+            for item in my_keys:
+                if item in key:
+                    returned[item] = my_dict[key]
+        return returned
