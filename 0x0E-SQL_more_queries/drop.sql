@@ -1,1 +1,1 @@
-DROP TABLE force_name
+DROP DATABASE hbtn_0d_usa
