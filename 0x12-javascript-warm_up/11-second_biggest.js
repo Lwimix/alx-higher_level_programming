@@ -2,7 +2,7 @@
 'use strict';
 let i; let biggest = process.argv[2]; let secondBiggest;
 secondBiggest = process.argv[3];
-if (biggest === undefined || process.argv.length === 3) { console.log(0); } else {
+if (biggest === undefined || process.argv.length === 3 || process.argv.every((num) => num === biggest)) { console.log(0); } else {
   if (secondBiggest === undefined) { console.log(0); } else {
     for (i = 3; i < process.argv.length; i++) {
       if (biggest <= process.argv[i]) {
