@@ -4,6 +4,6 @@
  * It uses a function that is visible from outside
  */
 'use strict';
-exports.add = function add(num1, num2) {
-	return (num1 + num2);
-}
+exports.add = function add (num1, num2) {
+  return (num1 + num2);
+};
