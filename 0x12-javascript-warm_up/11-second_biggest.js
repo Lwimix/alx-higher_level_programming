@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 'use strict';
 let i; let biggest = process.argv[2]; let secondBiggest;
 secondBiggest = process.argv[3];
