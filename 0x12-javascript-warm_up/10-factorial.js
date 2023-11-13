@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 /*
  * This script computes and prints the factorial of
  * the first argument recursively in a function

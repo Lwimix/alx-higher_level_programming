@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 /*
  * This script prints out "C is fun" x number of times
  * where x is an argument that can be converted to number

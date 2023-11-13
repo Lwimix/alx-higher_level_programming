@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 /*
  * This script prints out a square comprising of "X"'s.
  */

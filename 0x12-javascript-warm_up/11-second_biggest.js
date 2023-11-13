@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 'use strict';
 let i; let biggest = process.argv[2]; let secondBiggest;
 if (biggest === undefined || process.argv.length === 3) { console.log(0); } else {
