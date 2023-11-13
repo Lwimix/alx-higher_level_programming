@@ -1,2 +1,2 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 myVar = 333;
