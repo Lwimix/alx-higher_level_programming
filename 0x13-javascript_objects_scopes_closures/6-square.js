@@ -2,8 +2,8 @@
 /*
  * This script creates a Square class that inherits from Rectangle
  */
-const Square = require('./5-Square');
-class Square extends Square {
+const Rectangle = require('./4-rectangle');
+class Square extends Rectangle {
   constructor (size) {
     super(size, size);
     this.size = size;
