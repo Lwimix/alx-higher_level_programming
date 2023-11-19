@@ -15,16 +15,13 @@ def print_states(username, password, db_name):
     """ This deletes all the states with letter 'a'
     in the database hbtn_0e_6_usa
     """
-    engine = create_engine(f"""mysql+mysqldb://
-    {username}:{password}@localhost/
-    {db_name}""", pool_pre_ping=True)
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/{db_name}", pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State)\
-        .order_by(State.id)\
-        .filter(State.name like '%a%').delete()
+    states = session.query(State).order_by(State.id)\
+        .filter(State.name.like('%a%')).delete()
     session.commit()
     session.close()
 

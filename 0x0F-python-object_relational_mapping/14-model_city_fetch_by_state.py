@@ -8,7 +8,7 @@ it to manipulate data in the cities table
 import sys
 from model_state import Base
 from model_city import City
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine, subquery, select
 from spqlalchemy.orm import sessionmaker
 
 
@@ -23,11 +23,12 @@ def print_cities(username, password, db_name):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    cities = session.query(select(State.name, City.id, City.name)) \
+    sub_query = select(State.name, City.id, City.name)
+    cities = session.query(subquery(sub_query)) \
         .join(State, State.id == City.state_id) \
         .order_by(City.id)
     for city in cities:
-        print("{}".format(city))
+        print("{}: ({}) {}".format(city.name, city.id, city.name))
     session.close()
 
 
