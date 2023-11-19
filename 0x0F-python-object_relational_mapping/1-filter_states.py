@@ -22,3 +22,4 @@ if __name__ == "__main__":
                 ORDER BY states.id ASC""")
     for row in cur.fetchall():
         print(row)
+    connect.close()
