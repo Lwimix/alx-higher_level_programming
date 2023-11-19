@@ -26,7 +26,7 @@ if __name__ == "__main__":
         session.add(new_state)
         session.commit()
         state_id = session.query(State).filter(State.name == "Louisiana")
-        print("{}".format(state.id))
+        print("{}".format(state_id.id))
         session.close()
     username = sys.argv[1]
     password = sys.argv[2]
