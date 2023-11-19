@@ -8,28 +8,24 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
-
-
-def print_states(username, password, db_name):
-    """ This prints all the states in the database
-    hbtn_0e_6_usa
-    """
-    engine = create_engine(f"""mysql+mysqldb://
-    {username}:{password}@localhost/
-    {db_name}""", pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    states = session.query(select(State.id, State.name))\
-        .order_by(State.id)
-    for state in states:
-        print("".join(state))
-    session.close()
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+    def print_states(username, password, db_name):
+        """ This prints all the states in the database
+        hbtn_0e_6_usa
+        """
+        engine = create_engine(f"""mysql+mysqldb://
+        {sys.argv[1]}:{sys.argv[2]}@localhost/
+        {sys.argv[3]}""", pool_pre_ping=True)
+        Base.metadata.create_all(engine)
+        session = Session(engine)
+        states = session.query(select(State.id, State.name))\
+            .order_by(State.id).all()
+        for state in states:
+            print("".join(state))
+        session.close()
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]

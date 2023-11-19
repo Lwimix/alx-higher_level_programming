@@ -8,7 +8,7 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 def print_state(username, password, db_name):
@@ -22,10 +22,9 @@ def print_state(username, password, db_name):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    rows = session.query(State).count()
     state = session.query(select(State.id, State.name))\
         .order_by(State.id).first()
-    if rows == 0:
+    if not state:
         print("Nothing")
     else:
         print("".join(state))

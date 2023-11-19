@@ -6,7 +6,6 @@ state table from our database
 """
 from sqlalchemy import ForeignKey, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 
 
 Base = declarative_base()
@@ -17,13 +16,13 @@ class State(Base):
     It inherits from the Base class
     """
     __tablename__ = "states"
-    myId = Column("Id", Integer, primary_key=True, nullable=False)
-    name = Column("Name", String(128), nullable=False)
+    myId = Column("id", Integer, primary_key=True, nullable=False,
+            unique=True, autoincrement=True)
+    name = Column("name", String(128), nullable=False)
 
     def __init__(*args, **kwargs):
         if args:
-            self.myId = args[0]
-            self.name = args[1]
+            self.name = args
         elif kwargs:
             for key, value in kwargs.items:
                 setattr(self, key, value)
