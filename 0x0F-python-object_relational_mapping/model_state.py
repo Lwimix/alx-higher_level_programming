@@ -26,5 +26,3 @@ class State(Base):
         elif kwargs:
             for key, value in kwargs.items:
                 setattr(self, key, value)
-
-    Base.metadata.create_all(engine)
