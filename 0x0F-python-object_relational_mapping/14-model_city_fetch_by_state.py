@@ -12,14 +12,14 @@ from sqlalchemy import create_engine, subquery, select
 from sqlalchemy.orm import sessionmaker
 
 
-
-
 if __name__ == "__main__":
     def print_cities(username, password, db_name):
         """ This prints all the cities in the database
         hbtn_0e_14_usa
         """
-        engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/{db_name}", pool_pre_ping=True)
+        engine = create_engine(
+                f"mysql+mysqldb://{username}:{password}@localhost/{db_name}",
+                pool_pre_ping=True)
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
