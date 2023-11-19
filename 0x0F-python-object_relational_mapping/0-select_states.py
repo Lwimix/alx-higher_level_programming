@@ -5,10 +5,9 @@ No ORM is used in this case there it needs
 understanding of MySQL queries
 """
 import sys
-import mariadb
-
+import mySQLdb
 try:
-    connect = mariadb.connect(
+    connect = mySQLdb.connect(
             user=sys.argv[1],
             password=sys.argv[2],
             host="localhost",
