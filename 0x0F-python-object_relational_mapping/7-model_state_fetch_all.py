@@ -21,8 +21,9 @@ if __name__ == "__main__":
         {db_name}""", pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
-        states = session.query(select(State.id, State.name))\
-            .order_by(State.id).all()
+        sub_query = select(State.id, State.name))\
+            .order_by(State.id)
+        states = session.query(subquery(sub_query)).all()
         for state in states:
             print("".join(state))
         session.close()
