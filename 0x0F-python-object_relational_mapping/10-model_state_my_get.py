@@ -8,22 +8,20 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 def print_first_state(user, password, db_name, s_name):
     """ This prints the first state in the database
     hbtn_0e_6_usa
     """
-    engine = create_engine(f"""mysql+mysqldb://
-    {user}:{password}@localhost/
-    {db_name}""", pool_pre_ping=True)
+    engine = create_engine(f"mysql+mysqldb://{user}:{password}@localhost/{db_name}", pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State)\
-        .filter(State.name.=s_name).first()
+        .filter(State.name == s_name).first()
     if not state:
         print("Not found")
     else:
