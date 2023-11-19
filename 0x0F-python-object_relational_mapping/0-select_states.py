@@ -6,17 +6,15 @@ understanding of MySQL queries
 """
 import sys
 import mySQLdb
-try:
-    connect = mySQLdb.connect(
-            user=sys.argv[1],
-            password=sys.argv[2],
-            host="localhost",
-            port=3306,
-            database=sys.argv[3]
-            )
-except mariadb.Error as e:
-    print("Error while connecting mariadb")
-    sys.exit(1)
+
+
+connect = mySQLdb.connect(
+        user=sys.argv[1],
+        password=sys.argv[2],
+        host="localhost",
+        port=3306,
+        database=sys.argv[3]
+        )
 
 if __name__ == "__main__":
     cur = connect.cursor()
