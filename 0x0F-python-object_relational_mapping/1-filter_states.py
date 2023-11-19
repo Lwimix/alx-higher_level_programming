@@ -17,10 +17,10 @@ if __name__ == "__main__":
             database=sys.argv[3]
             )
     cur = connect.cursor()
-    cur.execute("""SELECT * FROM states
-                WHERE states.name like 'N%'
-                and states.name IS NOT NULL
-                ORDER BY states.id ASC""")
+    query = "SELECT * FROM states WHERE states.name like 'N%' "
+    part_2query = "ORDER BY states.id ASC"
+    fullquery = query + part_2query
+    cur.execute(fullquery)
     for row in cur.fetchall():
         print(row)
     connect.close()

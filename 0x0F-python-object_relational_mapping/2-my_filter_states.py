@@ -19,7 +19,6 @@ if __name__ == "__main__":
     cur = connect.cursor()
     query = """SELECT * FROM states
     WHERE states.name LIKE '{:s}'
-    AND state.name IS NOT NULL
     ORDER BY states.id ASC;""".format(sys.argv[4])
     cur.execute(query)
     for row in cur.fetchall():
