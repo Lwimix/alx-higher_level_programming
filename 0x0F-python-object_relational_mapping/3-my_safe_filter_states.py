@@ -9,7 +9,7 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    def no_injections(username, passwd, database, state_name):
+    def no_injections(username, passwd, db, state_name):
         """
         This function eliminates the possibility of SQL injections
         """
@@ -18,13 +18,13 @@ if __name__ == "__main__":
                 password=passwd,
                 host="localhost",
                 port=3306,
-                database=database
+                database=db
                 )
         cur = connect.cursor()
         query = """SELECT * FROM states
-        WHERE states.name LIKE '{:s}'
+        WHERE states.name LIKE %s
         ORDER BY states.id ASC;""".format(state_name)
-        cur.execute(query)
+        cur.execute(query, (state_name,))
         for row in cur.fetchall():
             print(row)
         connect.close()
