@@ -5,10 +5,10 @@ No ORM is used in this case there it needs
 understanding of MySQL queries
 """
 import sys
-import mySQLdb
+import MySQLdb
 
 
-connect = mySQLdb.connect(
+connect = MySQLdb.connect(
         user=sys.argv[1],
         password=sys.argv[2],
         host="localhost",
