@@ -8,14 +8,14 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 def add_state(username, password, db_name):
     """ This adds a state to the database
     hbtn_0e_6_usa
     """
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/db_name}", pool_pre_ping=True)
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/{db_name}", pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
@@ -23,7 +23,7 @@ def add_state(username, password, db_name):
     new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
-    state_id = session.query(State).filter(State.name="Louisiana")
+    state_id = session.query(State).filter(State.name == "Louisiana")
     print("{}".format(state.id))
     session.close()
 

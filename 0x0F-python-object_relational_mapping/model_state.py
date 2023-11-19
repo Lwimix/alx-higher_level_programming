@@ -22,7 +22,7 @@ class State(Base):
 
     def __init__(*args, **kwargs):
         if args:
-            self.name = args
+            State.name = args
         elif kwargs:
             for key, value in kwargs.items:
                 setattr(self, key, value)

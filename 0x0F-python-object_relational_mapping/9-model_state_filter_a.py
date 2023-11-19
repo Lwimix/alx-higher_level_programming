@@ -8,7 +8,7 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 def print_states(username, password, db_name):
@@ -20,7 +20,7 @@ def print_states(username, password, db_name):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(select(State.id, State.name))\
+    states = session.query(State)\
         .order_by(State.id).filter(State.name.like('%a%'))
     for state in states:
         print("{}: {}".format(state.id, state.name))

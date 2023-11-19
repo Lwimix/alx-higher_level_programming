@@ -8,7 +8,7 @@ it to manipulate data in the State table
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from spqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 def update_state(username, password, db_name):
@@ -20,7 +20,7 @@ def update_state(username, password, db_name):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    updated_state = session.query(select(State)).filter(State.id=2)
+    updated_state = session.query(State).filter(State.id == 2)
     updated_state.name = "New Mexico"
     session.commit()
     session.close()

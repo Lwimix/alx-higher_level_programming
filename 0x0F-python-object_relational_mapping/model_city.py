@@ -14,15 +14,14 @@ class City(Base):
     It inherits from the Base class
     """
     __tablename__ = "cities"
-    myId = Column("id", Integer, primary_key=True,
+    id = Column(Integer, primary_key=True,
                   nullable=False, autoincrement=True, unique=True)
-    name = Column("name", String(128), nullable=False)
-    state_id = Column("state_id", Integer,
-                      nullable=False, ForeignKey("states.id"))
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, nullable=False, foreign_key="state_id")
 
     def __init__(*args, **kwargs):
         if args:
-            self.name = args[0]
+            City.name = args
         elif kwargs:
             for key, value in kwargs.items:
                 setattr(self, key, value)
