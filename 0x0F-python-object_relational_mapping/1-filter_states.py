@@ -14,7 +14,7 @@ if __name__ == "__main__":
             password=sys.argv[2],
             host="localhost",
             port=3306,
-            database="hbtn_0e_0_usa"
+            database=sys.argv[3]
             )
     cur = connect.cursor()
     cur.execute("""SELECT * FROM states
