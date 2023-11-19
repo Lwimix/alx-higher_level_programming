@@ -5,10 +5,10 @@ No ORM is used in this case there it needs
 understanding of MySQL queries
 """
 import sys
-import mySQLdb
+import mariadb
 
 
-connect = mySQLdb.connect(
+connect = mariadb.connect(
         user=sys.argv[1],
         password=sys.argv[2],
         host="localhost",
@@ -21,3 +21,4 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     for row in cur.fetchall():
         print(row)
+    connect.close()
