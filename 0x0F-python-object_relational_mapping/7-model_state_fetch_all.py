@@ -16,14 +16,12 @@ if __name__ == "__main__":
         """ This prints all the states in the database
         hbtn_0e_6_usa
         """
-        engine = create_engine(f"""mysql+mysqldb://
-        {username}:{password}@localhost/
-        {db_name}""", pool_pre_ping=True)
+        engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/{db_name}", pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
         states = session.query(State).order_by(State.id).all()
         for state in states:
-            print(state)
+            print("{}: {}"state.id, state.name)
         session.close()
     username = sys.argv[1]
     password = sys.argv[2]

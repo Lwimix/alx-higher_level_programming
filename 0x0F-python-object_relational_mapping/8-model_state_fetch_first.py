@@ -15,19 +15,16 @@ def print_state(username, password, db_name):
     """ This prints the first state in the database
     hbtn_0e_6_usa
     """
-    engine = create_engine(f"""mysql+mysqldb://
-    {username}:{password}@localhost/
-    {db_name}""", pool_pre_ping=True)
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost/{db_name}", pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(select(State.id, State.name))\
-        .order_by(State.id).first()
+    state = session.query(State).first()
     if not state:
         print("Nothing")
     else:
-        print("".join(state))
+        print("{}: {}".format(state.id, state.name))
     session.close()
 
 

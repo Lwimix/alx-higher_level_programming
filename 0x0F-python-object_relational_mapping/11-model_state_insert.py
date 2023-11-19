@@ -25,8 +25,8 @@ def add_state(username, password, db_name):
     new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
-    state_id = session.query(select(State.id)).filter(State.name="Louisiana")
-    print("".join(state_id))
+    state_id = session.query(State).filter(State.name="Louisiana")
+    print("{}".format(state.id))
     session.close()
 
 

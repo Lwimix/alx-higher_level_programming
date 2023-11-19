@@ -22,14 +22,12 @@ def print_first_state(user, password, db_name, s_name):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    existence = session.query(select(State))\
-        .filter(State.name.=s_name).exists()
-    state = session.query(select(State.id))\
+    state = session.query(State)\
         .filter(State.name.=s_name).first()
-    if not existence:
+    if not state:
         print("Not found")
     else:
-        print("".join(state))
+        print("{}".format(state.id))
     session.close()
 
 

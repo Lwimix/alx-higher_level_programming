@@ -27,7 +27,7 @@ def print_cities(username, password, db_name):
         .join(State, State.id == City.state_id) \
         .order_by(City.id)
     for city in cities:
-        print("".join(city))
+        print("{}".format(city))
     session.close()
 
 

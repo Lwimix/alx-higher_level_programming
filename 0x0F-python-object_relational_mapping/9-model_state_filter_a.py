@@ -25,7 +25,7 @@ def print_states(username, password, db_name):
     states = session.query(select(State.id, State.name))\
         .order_by(State.id).filter(State.name like '%a%')
     for state in states:
-        print("".join(state))
+        print("{}: {}".format(state.id, state.name))
     session.close()
 
 
