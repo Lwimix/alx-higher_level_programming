@@ -19,6 +19,7 @@ if __name__ == "__main__":
     cur = connect.cursor()
     cur.execute("""SELECT * FROM states
                 WHERE states.name like 'N%'
+                and states.name IS NOT NULL
                 ORDER BY states.id ASC""")
     for row in cur.fetchall():
         print(row)
