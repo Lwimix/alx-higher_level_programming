@@ -9,6 +9,6 @@ if __name__ == "__main__":
     with urlopen(url) as response:
         content = response.read()
         print("Body response:")
-        print("\t- type:".expandtabs(4), type(content))
-        print("\t- content:".expandtabs(4), content)
-        print("\t- utf8 content:".expandtabs(4), content.decode('utf-8'))
+        print("\t- type:", type(content))
+        print("\t- content:", content)
+        print("\t- utf8 content:", content.decode('utf-8'))
