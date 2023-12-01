@@ -17,6 +17,11 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         param = sys.argv[1]
     result = search_api(param)
-    if len(result.text) != 0:
-        my_dict = dict(result.text)
-        print(my_dict["name"])
+    try:
+        my_json = result.json()
+        if my_json:
+            print(f"[{my_json['id']}] {my_json['name']}")
+        else:
+            print("No result")
+    except requests.exceptions.JSONDecodeError:
+        print("Not a valid JSON")
