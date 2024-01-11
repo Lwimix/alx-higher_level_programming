@@ -1,4 +1,5 @@
-// Updates header element color using jQerry API
-$(document).ready(update(
-	$("header").css("color", "red");
-);
+// Updates header element color using jQuery API
+import $ from 'jquery';
+$(document).ready(() => {
+  $('header').css('color', 'red');
+});
